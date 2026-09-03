@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Criar Usuário de Teste - Flask AuthMail{% endblock %}
+
+{% block content %}
+<h2 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 8px;">Cadastrar Usuário de Teste</h2>
+<p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 24px;">
+    Por segurança contra enumeração de usuários, o sistema só dispara e-mails reais para contas existentes no banco de dados. Cadastre seu e-mail de teste aqui:
+</p>
+
+<form method="POST" action="{{ url_for('cadastrar_teste') }}">
+    <div class="form-group">
+        <label for="email">E-mail para Cadastro</label>
+        <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            required 
+            placeholder="seu-email@dominio.com"
+            autocomplete="email"
+            autofocus
+        >
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        Salvar Usuário no Banco Local &rarr;
+    </button>
+</form>
+
+<div style="text-align: center; margin-top: 18px;">
+    <a href="{{ url_for('login') }}" style="font-size: 0.85rem; color: var(--text-muted); text-decoration: none;">
+        &larr; Voltar para a tela de Login
+    </a>
+</div>
+{% endblock %}

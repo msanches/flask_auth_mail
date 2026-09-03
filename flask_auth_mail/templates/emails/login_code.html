@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código de Login</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 0;
+            color: #333333;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid #e1e8ed;
+        }
+        .header {
+            background: linear-gradient(135deg, #0ea5e9, #0284c7);
+            padding: 30px;
+            text-align: center;
+            color: #ffffff;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+        .content {
+            padding: 40px 30px;
+            line-height: 1.6;
+        }
+        .content p {
+            margin: 0 0 20px;
+            font-size: 16px;
+            color: #4b5563;
+        }
+        .code-container {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #f0f9ff;
+            border: 2px dashed #bae6fd;
+            border-radius: 8px;
+        }
+        .code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 36px;
+            font-weight: 700;
+            letter-spacing: 6px;
+            color: #0369a1;
+            margin: 0;
+        }
+        .validity {
+            font-weight: 600;
+            color: #111827;
+        }
+        .warning {
+            font-size: 14px;
+            color: #ef4444;
+            font-weight: 500;
+            background-color: #fef2f2;
+            padding: 12px 16px;
+            border-left: 4px solid #ef4444;
+            border-radius: 4px;
+            margin-top: 25px;
+        }
+        .footer {
+            background-color: #f9fafb;
+            padding: 20px 30px;
+            text-align: center;
+            font-size: 13px;
+            color: #9ca3af;
+            border-top: 1px solid #f3f4f6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>{{ app_name }}</h1>
+        </div>
+        <div class="content">
+            <p>Olá,</p>
+            <p>Use o código de verificação de um só uso (OTP) abaixo para realizar o seu login no <strong>{{ app_name }}</strong>:</p>
+            <div class="code-container">
+                <div class="code">{{ code }}</div>
+            </div>
+            <p>Este código é válido por <span class="validity">{{ expires_in_minutes }} minutos</span> e expira automaticamente após esse prazo.</p>
+            <div class="warning">
+                <strong>Atenção:</strong> Nunca compartilhe este código com ninguém. Nossa equipe nunca solicitará este código por telefone, e-mail ou redes sociais.
+            </div>
+        </div>
+        <div class="footer">
+            <p>Este é um e-mail automático enviado por {{ app_name }}. Por favor, não responda a esta mensagem.</p>
+        </div>
+    </div>
+</body>
+</html>
