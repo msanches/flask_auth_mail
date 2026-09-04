@@ -15,7 +15,7 @@ Este tutorial ensina como reutilizar o módulo **`flask_auth_mail`** em qualquer
 Copie a pasta `flask_auth_mail/` para a raiz do seu novo projeto Flask:
 ```text
 seu_projeto/
-├── flask_auth_mail/        <-- Copie esta pasta inteira
+├── flask_auth_mail/        <-- Copie esta pasta inteira para sua aplicação
 │   ├── templates/emails/
 │   │   ├── login_code.html
 │   │   └── reset_password.html
@@ -27,7 +27,8 @@ seu_projeto/
 │   └── tokens.py
 ├── .env                    <-- Suas chaves de ambiente
 ├── requirements.txt
-└── app.py
+├── templates               <-- Templates da aplicação(HTML)
+└── app.py                  <-- Aplicação Flask
 ```
 
 ### B. Dependências necessárias
